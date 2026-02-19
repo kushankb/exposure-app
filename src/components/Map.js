@@ -32,7 +32,7 @@ const CLIMATE_KEYS = ["CDD", "FD", "Rx5", "Tx35"];
 // - In production:  use a separate GitHub Pages tile repo
 const IS_PROD = process.env.NODE_ENV === "production";
 const TILE_BASE = IS_PROD
-  ? "https://kushankb.github.io/exposure-tiles"
+  ? "https://kushankbajaj.com/exposure-tiles"
   : "http://localhost:8765";
 
 // In dev mode, the tile server uses mbtiles names (e.g. "CDD_raster");
