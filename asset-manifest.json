@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/exposure-app/static/css/main.f2b26ba4.css",
+    "main.js": "/exposure-app/static/js/main.debd61e9.js",
+    "index.html": "/exposure-app/index.html",
+    "main.f2b26ba4.css.map": "/exposure-app/static/css/main.f2b26ba4.css.map",
+    "main.debd61e9.js.map": "/exposure-app/static/js/main.debd61e9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f2b26ba4.css",
+    "static/js/main.debd61e9.js"
+  ]
+}
