@@ -425,13 +425,10 @@ html, body, #root {
 /* ── Info Panel ─────────────────────────────────────────────── */
 .info-panel {
   position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 90px;
+  left: 20px;
   z-index: 10;
-  max-width: 440px;
-  width: calc(100% - 560px);
-  min-width: 320px;
+  max-width: 380px;
 }
 
 .info-toggle {
@@ -457,7 +454,7 @@ html, body, #root {
   border-radius: var(--radius-md);
   padding: 0.9rem 1rem;
   box-shadow: var(--shadow);
-  max-height: calc(100vh - 100px);
+  max-height: calc(100vh - 130px);
   overflow-y: auto;
 }
 .info-content::-webkit-scrollbar { width: 4px; }
@@ -545,13 +542,20 @@ html, body, #root {
   text-decoration: underline;
 }
 
+.info-built-by {
+  margin-top: 0.5rem;
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--border);
+}
+
 @media (max-width: 768px) {
   .info-panel {
-    left: 20px;
-    transform: none;
-    width: calc(100% - 40px);
-    max-width: none;
-    min-width: 0;
+    top: 80px;
+    left: 10px;
+    max-width: calc(100% - 20px);
   }
   .findings-grid {
     grid-template-columns: 1fr;

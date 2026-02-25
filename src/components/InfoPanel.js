@@ -30,6 +30,21 @@ const FINDINGS = [
   },
 ];
 
+const FARM_SIZE_FINDINGS = [
+  {
+    size: "Small farms (<2 ha)",
+    detail: "Greatest exposure to heavy precipitation increases; vulnerable to flooding and waterlogging",
+  },
+  {
+    size: "Medium farms (2\u20135 ha)",
+    detail: "Highest increase in heat stress days; nearly double the increase seen on large farms",
+  },
+  {
+    size: "Large farms (>50 ha)",
+    detail: "Lower per-area exposure overall, but still face significant drought risk in key breadbaskets",
+  },
+];
+
 const LAYERS_INFO = [
   {
     icon: "\u{1F525}",
@@ -80,6 +95,20 @@ export default function InfoPanel() {
           </div>
 
           <div className="info-section-title" style={{ marginTop: "1rem" }}>
+            Exposure by Farm Size
+          </div>
+          <div className="burdens-table">
+            {FARM_SIZE_FINDINGS.map((f, i) => (
+              <div key={i} className="burden-info-row">
+                <div className="bi-text">
+                  <div className="bi-name">{f.size}</div>
+                  <div className="bi-detail">{f.detail}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="info-section-title" style={{ marginTop: "1rem" }}>
             Climate Layers
           </div>
           <div className="burdens-table">
@@ -123,6 +152,18 @@ export default function InfoPanel() {
               className="info-cite-link"
             >
               DOI: 10.1088/1748-9326/ae293c
+            </a>
+          </div>
+
+          <div className="info-built-by">
+            Built by{" "}
+            <a
+              href="https://kushankbajaj.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="info-cite-link"
+            >
+              Kushank Bajaj
             </a>
           </div>
         </div>
