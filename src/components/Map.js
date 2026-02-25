@@ -221,7 +221,7 @@ export default function Map({
       zoom: 2,
       minZoom: 1,
       maxZoom: 8,
-      projection: "equalEarth",
+      projection: "mercator",
       antialias: true,
     });
 
