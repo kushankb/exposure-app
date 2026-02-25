@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/exposure-app/static/css/main.d0195f5b.css",
-    "main.js": "/exposure-app/static/js/main.59e17dd0.js",
+    "main.css": "/exposure-app/static/css/main.b4a27873.css",
+    "main.js": "/exposure-app/static/js/main.627cbf15.js",
     "index.html": "/exposure-app/index.html",
-    "main.d0195f5b.css.map": "/exposure-app/static/css/main.d0195f5b.css.map",
-    "main.59e17dd0.js.map": "/exposure-app/static/js/main.59e17dd0.js.map"
+    "main.b4a27873.css.map": "/exposure-app/static/css/main.b4a27873.css.map",
+    "main.627cbf15.js.map": "/exposure-app/static/js/main.627cbf15.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0195f5b.css",
-    "static/js/main.59e17dd0.js"
+    "static/css/main.b4a27873.css",
+    "static/js/main.627cbf15.js"
   ]
 }
