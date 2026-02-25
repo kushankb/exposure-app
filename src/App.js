@@ -10,6 +10,7 @@
 import { useState, useCallback, useEffect } from "react";
 import Map from "./components/Map";
 import ControlPanel from "./components/ControlPanel";
+import InfoPanel from "./components/InfoPanel";
 import RasterLegend, { BreadbasketLegend } from "./components/Legend";
 import "./styles/global.css";
 
@@ -79,6 +80,9 @@ export default function App() {
         selectedPercentile={selectedPercentile}
         onLegendChange={setLegendConfig}
       />
+
+      {/* Info panel */}
+      <InfoPanel />
 
       {/* Layer controls */}
       <ControlPanel

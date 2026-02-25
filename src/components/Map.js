@@ -221,21 +221,13 @@ export default function Map({
       zoom: 2,
       minZoom: 1,
       maxZoom: 8,
-      projection: "globe",
+      projection: "equalEarth",
       antialias: true,
     });
 
     mapRef.current = m;
 
     m.on("style.load", () => {
-      m.setFog({
-        color:            "rgb(12, 15, 22)",
-        "high-color":     "rgb(14, 18, 28)",
-        "horizon-blend":  0.008,
-        "space-color":    "rgb(6, 8, 14)",
-        "star-intensity": 0.4,
-      });
-
       // Lighten the basemap land & water for better data contrast
       const style = m.getStyle();
       if (style && style.layers) {
