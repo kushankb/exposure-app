@@ -363,6 +363,33 @@ html, body, #root {
   white-space: nowrap;
 }
 
+.legend-swatch-row.clickable {
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: opacity var(--transition), background var(--transition);
+}
+.legend-swatch-row.clickable:hover {
+  background: rgba(255,255,255,0.06);
+}
+.legend-swatch-row.dimmed {
+  opacity: 0.3;
+}
+.legend-swatch-row.selected {
+  background: rgba(255,255,255,0.08);
+}
+.legend-swatch-row.selected .legend-swatch {
+  box-shadow: 0 0 6px 2px currentColor;
+}
+
+.legend-hint {
+  font-size: 0.56rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 6px;
+  opacity: 0.6;
+}
+
 /* ── Tooltip (popup) ───────────────────────────────────────── */
 .mapboxgl-popup-content {
   background: var(--bg-panel) !important;

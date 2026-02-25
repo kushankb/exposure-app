@@ -30,6 +30,7 @@ export default function App() {
   const [layerOpacity,      setLayerOpacity]      = useState(DEFAULT_OPACITY);
   const [selectedPercentile, setSelectedPercentile] = useState("p50");
   const [legendConfig,      setLegendConfig]      = useState(null);
+  const [selectedFoodGroup, setSelectedFoodGroup] = useState(null);
   const [mapLoaded,         setMapLoaded]         = useState(false);
 
   useEffect(() => {
@@ -78,6 +79,7 @@ export default function App() {
         activeLayers={activeLayers}
         layerOpacity={layerOpacity}
         selectedPercentile={selectedPercentile}
+        selectedFoodGroup={selectedFoodGroup}
         onLegendChange={setLegendConfig}
       />
 
@@ -101,7 +103,12 @@ export default function App() {
 
       {/* Breadbasket legend + scenario badge (bottom-right) */}
       <div className="bottom-right-stack">
-        {breadbasketActive && <BreadbasketLegend />}
+        {breadbasketActive && (
+          <BreadbasketLegend
+            selectedFoodGroup={selectedFoodGroup}
+            onSelectFoodGroup={setSelectedFoodGroup}
+          />
+        )}
         <div className="scenario-badge">SSP2-4.5 · CMIP6 Ensemble · 2°C GMT</div>
       </div>
     </>

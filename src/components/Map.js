@@ -198,6 +198,7 @@ export default function Map({
   activeLayers,
   layerOpacity,
   selectedPercentile,
+  selectedFoodGroup,
   onLegendChange,
 }) {
   const mapContainer = useRef(null);
@@ -299,6 +300,17 @@ export default function Map({
           layerOpacity.breadbaskets * 0.5
         );
       }
+
+      // Food-group filter
+      if (selectedFoodGroup) {
+        m.setFilter("breadbaskets-layer", [
+          "==",
+          ["get", BREADBASKET.groupKey],
+          selectedFoodGroup,
+        ]);
+      } else {
+        m.setFilter("breadbaskets-layer", null);
+      }
     }
 
     // --- Climate raster layers (show only the selected percentile) ---
@@ -338,7 +350,7 @@ export default function Map({
           : null
       );
     }
-  }, [activeLayers, layerOpacity, selectedPercentile, onLegendChange]);
+  }, [activeLayers, layerOpacity, selectedPercentile, selectedFoodGroup, onLegendChange]);
 
   return <div ref={mapContainer} id="map" />;
 }
