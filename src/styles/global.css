@@ -407,11 +407,23 @@ html, body, #root {
 .popup-value { color: var(--text-primary); font-weight: 500; font-variant-numeric: tabular-nums; }
 .popup-range { font-size: 0.67rem; color: var(--text-muted); margin-top: 4px; }
 
-/* ── Scenario badge ─────────────────────────────────────────── */
-.scenario-badge {
+/* ── Bottom-right stack (breadbasket legend + scenario badge) ── */
+.bottom-right-stack {
   position: absolute;
   bottom: 36px; right: 20px;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.bottom-right-stack .legend {
+  position: relative;
+}
+
+/* ── Scenario badge ─────────────────────────────────────────── */
+.scenario-badge {
   background: var(--bg-panel);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);

@@ -94,14 +94,16 @@ export default function App() {
         onPercentileChange={handlePercentileChange}
       />
 
-      {/* Legends */}
+      {/* Raster legend (bottom-left) */}
       <div className="legend-stack">
         <RasterLegend config={legendConfig} />
-        {breadbasketActive && <BreadbasketLegend />}
       </div>
 
-      {/* Scenario badge */}
-      <div className="scenario-badge">SSP2-4.5 · CMIP6 Ensemble · 2°C GMT</div>
+      {/* Breadbasket legend + scenario badge (bottom-right) */}
+      <div className="bottom-right-stack">
+        {breadbasketActive && <BreadbasketLegend />}
+        <div className="scenario-badge">SSP2-4.5 · CMIP6 Ensemble · 2°C GMT</div>
+      </div>
     </>
   );
 }
