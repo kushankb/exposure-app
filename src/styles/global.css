@@ -383,11 +383,22 @@ html, body, #root {
 }
 
 .legend-hint {
-  font-size: 0.56rem;
-  color: var(--text-muted);
+  font-size: 0.58rem;
+  color: var(--accent-blue);
   text-align: center;
   margin-top: 6px;
-  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+.legend-hint.pulse {
+  animation: hintPulse 2s ease-in-out infinite;
+}
+.legend-hint.faded {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1; }
 }
 
 /* ── Tooltip (popup) ───────────────────────────────────────── */

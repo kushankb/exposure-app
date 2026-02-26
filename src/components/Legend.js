@@ -40,6 +40,7 @@ export default function RasterLegend({ config }) {
 // ── Breadbasket categorical legend (clickable food-group filter) ─────────────
 export function BreadbasketLegend({ selectedFoodGroup, onSelectFoodGroup }) {
   const groups = Object.entries(FOOD_GROUP_COLORS);
+  const hasInteracted = selectedFoodGroup !== null;
 
   return (
     <div className="legend legend-categorical">
@@ -53,6 +54,7 @@ export function BreadbasketLegend({ selectedFoodGroup, onSelectFoodGroup }) {
               key={key}
               className={`legend-swatch-row clickable${isDimmed ? " dimmed" : ""}${isSelected ? " selected" : ""}`}
               onClick={() => onSelectFoodGroup(isSelected ? null : key)}
+              title={isSelected ? `Click to show all groups` : `Click to show only ${label}`}
             >
               <span className="legend-swatch" style={{ background: color }} />
               <span className="legend-swatch-label">{label}</span>
@@ -60,7 +62,9 @@ export function BreadbasketLegend({ selectedFoodGroup, onSelectFoodGroup }) {
           );
         })}
       </div>
-      <div className="legend-hint">Click to filter</div>
+      <div className={`legend-hint${hasInteracted ? " faded" : " pulse"}`}>
+        {hasInteracted ? "Click selected group to reset" : "Click a food group to filter"}
+      </div>
     </div>
   );
 }
